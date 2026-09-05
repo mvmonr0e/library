@@ -16,6 +16,10 @@ function Book(id, title, author) {
 function addBookToLib(id, title, author){
     /* take params, create book,
        then store in array */
-       const book = new Book(id,title,author);
-       myLib.push(book);
+    const book = new Book(id,title,author);
+    myLib.push(book);
+}
+
+function displayBookTitle(){
+    // loop thru array and display all titles
 }
