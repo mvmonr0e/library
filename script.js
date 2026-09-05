@@ -20,7 +20,7 @@ function addBookToLib(title, author){
     myLib.push(book);
 }
 
-function displayBookTitle(){
+function displayBookTitles(){
     // loop thru array and display all titles
     const tableBody = document.getElementById('table-body');
     const rowsHtml = myLib.map(book => {
@@ -35,3 +35,5 @@ function displayBookTitle(){
 
     tableBody.innerHTML = rowsHtml;
 }
+
+displayBookTitles();
