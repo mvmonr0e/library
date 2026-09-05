@@ -1,4 +1,6 @@
-const myLib = [];
+const myLib = [
+    {id:0, title: "awesome book", author: "awesome author"}
+];
 
 function Book(id, title, author) {
     // constructor
@@ -8,18 +10,27 @@ function Book(id, title, author) {
     this.id = id;
     this.title = title;
     this.author = author;
-    this.info = function() {
-        console.log(`"{this.title} by {this.author`);
-    }
 }
 
-function addBookToLib(id, title, author){
+function addBookToLib(title, author){
     /* take params, create book,
-       then store in array */
+    then store in array */
+    id = crypto.randomUUID()
     const book = new Book(id,title,author);
     myLib.push(book);
 }
 
 function displayBookTitle(){
     // loop thru array and display all titles
+    const rowsHtml = myLib.map(book => {
+        return `
+            <tr>
+                <td>${book.id}</td>   
+                <td>${book.title}</td>  
+                <td>${book.author}</td>
+            </tr>   
+        `;
+    }).join('');
+
+    tableBody.innerHTML = rowsHtml;
 }
