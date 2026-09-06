@@ -27,6 +27,9 @@ function displayBookTitles(){
                 <td>${book.id}</td>   
                 <td>${book.title}</td>  
                 <td>${book.author}</td>
+                <td>
+                    <button class="btn btn-danger" onclick="removeEntry('${book.id}')">Remove</button>
+                </td>
             </tr>   
         `;
     }).join('');
@@ -50,3 +53,8 @@ function processNewBook(event) {
     displayBookTitles();
 }
 form.addEventListener('submit', processNewBook);
+
+function removeEntry(id){
+    myLib = myLib.filter(book => book.id !== id);
+    displayBookTitles();
+}
