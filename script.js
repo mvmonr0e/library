@@ -1,6 +1,4 @@
-const myLib = [
-    {id:0, title: "awesome book", author: "awesome author"}
-];
+let myLib = [];
 
 function Book(id, title, author) {
     // constructor
@@ -36,4 +34,19 @@ function displayBookTitles(){
     tableBody.innerHTML = rowsHtml;
 }
 
-displayBookTitles();
+const form = document.getElementById('newBookForm');
+function processNewBook(event) {
+    // prevent refresh
+    event.preventDefault(); 
+
+    // grab values from html
+    title = document.getElementById('bookTitle').value;
+    author = document.getElementById('bookAuthor').value;
+
+    // create new book entry
+    addBookToLib(title,author);
+
+    // display titles
+    displayBookTitles();
+}
+form.addEventListener('submit', processNewBook);

@@ -8,7 +8,7 @@
 
     <title>Library</title>
   </head>
-  <body>
+  <body onload="displayBookTitles()">
     <h1>Library</h1>
 
     <button type="button" class="btn btn-primary" id="new-book-btn" data-bs-toggle="modal" data-bs-target="#formModal">Add Book</button>
@@ -22,7 +22,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
 
-                <form action="/submit-path" method="POST">
+                <form id="newBookForm">
                     <div class="modal-body text-start">
                         <div class="mb-3">
                             <label for="bookTitle" class="form-label">Title</label>
@@ -36,7 +36,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                        <button type="submit" class="btn btn-success">Submit</button>
+                        <button type="submit" class="btn btn-success" data-bs-dismiss="modal">Submit</button>
                     </div>
                 </form>
             </div>
